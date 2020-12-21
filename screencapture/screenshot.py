@@ -30,7 +30,7 @@ def main(args=None):
     parser.add_argument('--end', '-e',
         type=float,
         nargs=2,
-        default=[0.0, 0.0],
+        default=[1.0, 1.0],
         help='end')
     parser.add_argument('location',
         type=str,
@@ -54,7 +54,7 @@ def main(args=None):
         int(monitor.y + params.begin[1] * monitor.height),
         int(monitor.x + params.end[0]   * monitor.width ),
         int(monitor.y + params.end[1]   * monitor.height),
-        )).save(formater(params.location))
+        ), childprocess=False).save(formater(params.location))
 
 
 # #######################################################################################
